@@ -1,6 +1,5 @@
 // *********************
 // This Code is for only the floating card in right bottom corner
-// **********************
 
 const touchButton = document.querySelector(".float-text");
 const card = document.querySelector(".float-card-info");
@@ -10,29 +9,31 @@ touchButton.addEventListener("click", moveCard);
 close.addEventListener("click", moveCard);
 
 function moveCard() {
-  card.classList.toggle("active");
+    card.classList.toggle("active");
 }
 
+
 const showMenu = (toggleId, navbarId, bodyId) => {
-  const toggle = document.getElementById(toggleId),
-    navbar = document.getElementById(navbarId),
-    bodypadding = document.getElementById(bodyId)
+    const toggle = document.getElementById(toggleId),
+        navbar = document.getElementById(navbarId),
+        bodypadding = document.getElementById(bodyId)
 
-  if (toggle && navbar) {
-    toggle.addEventListener('click', () => {
-      navbar.classList.toggle('expander')
+    if (toggle && navbar) {
+        toggle.addEventListener('click', () => {
+            navbar.classList.toggle('expander')
 
-      bodypadding.classList.toggle('body-pd')
-    })
-  }
+            bodypadding.classList.toggle('body-pd')
+        })
+    }
 }
 showMenu('nav-toggle', 'navbar', 'body-pd')
 
 /*===== LINK ACTIVE  =====*/
 const linkColor = document.querySelectorAll('.nav__link')
+
 function colorLink() {
-  linkColor.forEach(l => l.classList.remove('active'))
-  this.classList.add('active')
+    linkColor.forEach(l => l.classList.remove('active'))
+    this.classList.add('active')
 }
 linkColor.forEach(l => l.addEventListener('click', colorLink))
 
@@ -42,11 +43,11 @@ const linkCollapse = document.getElementsByClassName('collapse__link')
 var i
 
 for (i = 0; i < linkCollapse.length; i++) {
-  linkCollapse[i].addEventListener('click', function () {
-    const collapseMenu = this.nextElementSibling
-    collapseMenu.classList.toggle('showCollapse')
+    linkCollapse[i].addEventListener('click', function() {
+        const collapseMenu = this.nextElementSibling
+        collapseMenu.classList.toggle('showCollapse')
 
-    const rotate = collapseMenu.previousElementSibling
-    rotate.classList.toggle('rotate')
-  })
+        const rotate = collapseMenu.previousElementSibling
+        rotate.classList.toggle('rotate')
+    })
 }
