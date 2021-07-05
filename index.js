@@ -1,5 +1,28 @@
-// *********************
-// This Code is for only the floating card in right bottom corner
+
+
+var isBig = false;
+
+function big(b) {
+  if (b) {
+    rainbow.classList.remove("hidden");
+    nav.classList.add("big");
+    header.classList.add("big");
+    document.body.classList.add("big");
+  } else if (header.classList.contains("big")) {
+    nav.classList.remove("big");
+    header.classList.remove("big");
+    document.body.classList.remove("big");
+    rainbow.classList.add("hidden");
+  }
+  isBig = b;
+}
+big(true);
+
+function toggleBig() {
+  isBig = !isBig
+  big(isBig);
+}
+
 
 const touchButton = document.querySelector(".float-text");
 const card = document.querySelector(".float-card-info");
